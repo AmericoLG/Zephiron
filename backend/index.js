@@ -2,10 +2,13 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 
+// Importar la conexión de la Base de Datos
+const pool = require('./db'); 
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Configuración para permitir conectar con el Frontend
+// Middlewares
 app.use(cors());
 app.use(express.json());
 
